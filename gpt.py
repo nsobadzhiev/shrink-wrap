@@ -1,0 +1,30 @@
+import os
+
+import litellm
+from dotenv import load_dotenv
+
+from chat_storage import Chat, litellm_chat_history
+
+load_dotenv()
+
+LLM_MODEL = os.environ.get("MODEL")
+API_KEY = os.environ.get("API_KEY")
+LLM_API_BASE = os.environ.get("LLM_API_BASE")
+
+litellm.api_key = API_KEY
+
+
+def ask_custom_gpt(system_prompt: str, chat: Chat):
+    try:
+        response = litellm.completion(
+            model=LLM_MODEL,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                *litellm_chat_history(chat)
+            ],
+            api_base=LLM_API_BASE,
+        )
+        return response["choices"][0]["message"]["content"]
+    except Exception as e:
+        reply = f"⚠️ Error: {str(e)}"
+        return reply

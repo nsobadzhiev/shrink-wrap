@@ -1,0 +1,20 @@
+[project]
+name = "customgpt-telegrambot"
+version = "0.1.0"
+description = "A Telegran bot that serves as a frontend to a customGPT"
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Nikola Sobadjiev", email = "nikola@kumulintelligence.com" }
+]
+
+dependencies = [
+    "fastapi >= 0.116.1",
+    "python-telegram-bot >= 22.3",
+    "uvicorn >= 0.35.0",
+    "gunicorn >= 23.0.0",
+    "python-dotenv >= 1.1.1",
+    "pydantic >= 2.11.7",
+    "litellm >= 1.74.15",
+]
