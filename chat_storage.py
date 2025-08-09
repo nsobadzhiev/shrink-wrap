@@ -59,8 +59,8 @@ def chat_for_id(chat_id: str) -> Optional[Chat]:
     return chats[chat_id] if chat_id in chats else None
 
 
-def litellm_chat_history(chat: Chat) -> list[dict[str, str]]:
+def litellm_chat_history(chat: Chat, max_items: int = 40) -> list[dict[str, str]]:
     return [{
         "role": "user" if message.by.type == ChatMemberType.USER else "assistant",
-        "content": message.text} for message in chat.messages
+        "content": message.text} for message in chat.messages[-max_items:]
     ]

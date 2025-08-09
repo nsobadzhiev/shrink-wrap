@@ -13,7 +13,7 @@ from telegram_message import convert_chat_message
 load_dotenv()  # take environment variables from .env.
 
 TOKEN = os.environ.get("TOKEN")
-system_prompt = system_prompts.custom_gpts[os.environ.get("CUSTOM_GPT_NAME")]
+system_prompt = system_prompts.custom_gpts[os.environ.get("CUSTOM_GPT_NAME", "smart_goals")]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hello! I'm your FastAPI bot 😄")
