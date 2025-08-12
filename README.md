@@ -3,6 +3,8 @@
 
 CustomGPTs are just glorified system prompts. There's no reason you shouldn't be able to run one yourself, without having a ChatGPT Plus subscription.
 
+![logo.jpg](images/logo.jpg)
+
 As long as you have an API Key or a way to run the bot with a locally running LLM, you can create your own CustomGPT and expose it as a Telegram bot.
 
 ---
