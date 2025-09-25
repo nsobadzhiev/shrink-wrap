@@ -16,5 +16,6 @@ dependencies = [
     "gunicorn >= 23.0.0",
     "python-dotenv >= 1.1.1",
     "pydantic >= 2.11.7",
-    "litellm>=1.74.15",
+    "pydantic-settings >= 2.10.1",
+    "litellm>=1.77.4",
 ]
